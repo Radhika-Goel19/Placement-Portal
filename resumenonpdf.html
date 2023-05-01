@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resume Details</title>
+	<style>
+		body {
+			background-color: rgb(246, 246, 145);
+			color: black;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			font-size: 24px;
+			margin: 20px 0;
+			text-align: center;
+		}
+		form {
+			margin: 20px auto;
+			max-width: 600px;
+			padding: 20px;
+		}
+		label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		input[type="text"], textarea {
+			display: block;
+			margin-bottom: 20px;
+			width: 100%;
+			border: 1px solid black;
+			border-radius: 5px;
+		}
+		textarea {
+			height: 100px;
+		}
+		button {
+			background-color: black;
+			color: white;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			margin-top: 10px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: white;
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	<h1>Resume Details</h1>
+	<form>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+		<label for="email">Email:</label>
+		<input type="text" id="email" name="email" placeholder="Enter your email" required>
+
+		<label for="phone">Phone:</label>
+		<input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+		<label for="address">Address:</label>
+		<textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+
+		<label for="education">Education:</label>
+		<textarea id="education" name="education" placeholder="Enter your education" required></textarea>
+
+		<label for="skills">Skills:</label>
+		<textarea id="skills" name="skills" placeholder="Enter your skills" required></textarea>
+
+		<button type="submit" onclick="saveChanges()">Save Changes</button>
+		<button type="reset">Reset</button>
+		<button type="button" onclick="goBack()">Go Back</button>
+	</form>
+
+    <div id="display"></div>
+
+	<script>
+		function saveChanges() {
+			var name = document.getElementById("name").value;
+			var email= document.getElementById("email").value;
+			var phone = document.getElementById("phone").value;
+			var address = document.getElementById("address").value;
+            var education = document.getElementById("education").value;
+            var skills = document.getElementById("skills").value;
+
+			var display = document.getElementById("display");
+			display.innerHTML = "<p><b>Name:</b> " + name + "</p>" + "<p><b>Email-Id:</b> " + email + "</p>" + "<p><b>Phone_Number:</b> " + phone + "</p>" + "<p><b>Address:</b> " + address + "</p>"+ "<p><b>Education:</b> " + education+ "</p>"+ "<p><b>Skills:</b> " + skills + "</p>";
+
+            alert("Changes saved successfully!");
+		}
+
+		function goBack() {
+			window.history.back();
+		}
+	</script>
+
+</body>
+</html>

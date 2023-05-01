@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bank Details</title>
+	<style>
+		body {
+			background-color: rgb(246, 246, 145);
+			color: black;
+		}
+		form {
+			width: 50%;
+			margin: 0 auto;
+		}
+		label {
+			display: block;
+			margin-top: 10px;
+		}
+		input[type="text"] {
+			width: 100%;
+			padding: 5px;
+			border: 1px solid black;
+			border-radius: 5px;
+		}
+		button {
+			background-color: black;
+			color: white;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			margin-top: 10px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: white;
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	<h1>Bank Details</h1>
+	<form>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" placeholder="Enter your name" required>
+		
+		<label for="account">Account Number:</label>
+		<input type="text" id="account" name="account" placeholder="Enter your account number" required>
+		
+		<label for="routing">Routing Number:</label>
+		<input type="text" id="routing" name="routing" placeholder="Enter your routing number" required>
+
+        <label for="bank">Bank Name:</label>
+		<input type="text" id="bank" name="bank" placeholder="Enter your bank name" required>
+
+		<button type="submit" onclick="saveChanges()">Save Changes</button>
+		<button type="button" onclick="goBack()">Go Back</button>
+	</form>
+	
+	<div id="display"></div>
+	
+	<script>
+		function saveChanges() {
+			var name = document.getElementById("name").value;
+			var account = document.getElementById("account").value;
+			var routing = document.getElementById("routing").value;
+			var bank = document.getElementById("bank").value;
+
+			var display = document.getElementById("display");
+			display.innerHTML = "<p><b>Name:</b> " + name + "</p>" + "<p><b>Account Number:</b> " + account + "</p>" + "<p><b>Routing Number:</b> " + routing + "</p>" + "<p><b>Bank Name:</b> " + bank + "</p>";
+
+			alert("Changes saved successfully!");
+		}
+		
+		function goBack() {
+			window.history.back();
+		}
+	</script>
+</body>
+</html>
